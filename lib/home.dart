@@ -26,8 +26,8 @@ class _HomeState extends State<Home> {
 
   loadmodel() async {
     await Tflite.loadModel(
-      model: 'assets/images/converted_model.tflite',
-      labels: 'assets/images/lables1.txt',
+      model: 'assets/images/model_unquant.tflite',
+      labels: 'assets/images/labels.txt',
     );
   }
 

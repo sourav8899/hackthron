@@ -1,0 +1,9 @@
+0 Battery
+1 clothes
+2 E-Waste
+3 Glass
+4 Medical
+5 Metal
+6 Organic
+7 Paper
+8 plastic

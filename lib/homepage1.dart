@@ -161,8 +161,6 @@ class _homepageState extends State<homepage> {
                                 "Organic waste is any material that is biodegradable and comes from either a plant or an animal. Biodegradable waste is organic material that can be broken into carbon dioxide, methane or simple organic molecules.",
                             iconimage: "assets/images/oragnic.jpeg",
                             cat: "Organic waste");
-                        cat:
-                        "Organic waste";
                       },
                     );
                   },
@@ -174,12 +172,15 @@ class _homepageState extends State<homepage> {
                 InkWell(
                   onTap: () {
                     showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor: Colors.green[50],
                       context: context,
                       builder: (context) {
                         return Mycol(
-                          text: "hello",
-                          iconimage: "assets/images/4.png",
-                          cat: "Organic waste",
+                          text:
+                              "E-waste is any electrical or electronic equipment that's been discarded. This includes working and broken items that are thrown in the garbage or donated to a charity reseller like Goodwill. Often, if the item goes unsold in the store, it will be thrown away.",
+                          iconimage: "assets/images/electronic.jpg",
+                          cat: "E-Waste",
                         );
                       },
                     );
@@ -192,12 +193,15 @@ class _homepageState extends State<homepage> {
                 InkWell(
                   onTap: () {
                     showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor: Colors.green[50],
                       context: context,
                       builder: (context) {
                         return Mycol(
-                          text: "hello",
-                          iconimage: "assets/images/4.png",
-                          cat: "Organic waste",
+                          text:
+                              "The extremely detrimental impact of fast fashion waste on the environment is no news. Besides being responsible for nearly 10% of global carbon emissions, the clothing industry is also infamously known for the amount of resources it wastes and the millions of clothes ending up in landfills every day.",
+                          iconimage: "assets/images/batteries.jpg",
+                          cat: "Batteries ",
                         );
                       },
                     );
@@ -210,12 +214,15 @@ class _homepageState extends State<homepage> {
                 InkWell(
                   onTap: () {
                     showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor: Colors.green[50],
                       context: context,
                       builder: (context) {
                         return Mycol(
-                            text: "hello",
-                            iconimage: "assets/images/4.png",
-                            cat: "Organic waste");
+                            text:
+                                "The total amount of waste batteries is more, and it inevitably pollutes the environment. Among them, cadmium, mercury, zinc, lead and chromium are hazardous wastes. These heavy metals will enter the soil, change the soil acidity and alkalinity, affect the growth of crops, and accumulate in the body of crops.",
+                            iconimage: "assets/images/cloths.jpg",
+                            cat: "Clothes");
                       },
                     );
                   },
@@ -227,12 +234,15 @@ class _homepageState extends State<homepage> {
                 InkWell(
                   onTap: () {
                     showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor: Colors.green[50],
                       context: context,
                       builder: (context) {
                         return Mycol(
-                            text: "hello",
-                            iconimage: "assets/images/4.png",
-                            cat: "Organic waste");
+                            text:
+                                "Waste glass is another waste material that is produced in large quantities and is difficult to eliminate. It is known that most of the waste glass is collected, especially container glasses, remelted, and used to produce new glass.",
+                            iconimage: "assets/images/glass.jpg",
+                            cat: "Glass");
                       },
                     );
                   },
@@ -244,12 +254,15 @@ class _homepageState extends State<homepage> {
                 InkWell(
                   onTap: () {
                     showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor: Colors.green[50],
                       context: context,
                       builder: (context) {
                         return Mycol(
-                            text: "hello",
-                            iconimage: "assets/images/4.png",
-                            cat: "Organic waste");
+                            text:
+                                "Medical waste should be segregated, packaged, and labeled properly before disposal. Depending on the type of waste, it can be treated through methods such as incineration, autoclaving, or chemical treatment.",
+                            iconimage: "assets/images/medical.jpeg",
+                            cat: "Medical waste");
                       },
                     );
                   },
