@@ -35,8 +35,8 @@ class _LiveObjectDetectionState extends State<LiveObjectDetection> {
 
   void _initializeModel() async {
     await Tflite.loadModel(
-      model: 'assets/images/converted_model.tflite',
-      labels: 'assets/images/lables1.txt',
+      model: 'assets/teachable.tflite',
+      labels: 'assets/labels.txt',
     );
   }
 
@@ -73,7 +73,7 @@ class _LiveObjectDetectionState extends State<LiveObjectDetection> {
     }
     return WillPopScope(
       onWillPop: () async {
-        await _cameraController?.stopImageStream();
+        await _cameraController?.dispose();
         return true;
       },
       child: Scaffold(
