@@ -26,7 +26,7 @@ class intropage1 extends StatelessWidget {
                   Shadow(
                     offset: Offset(2.0, 6.0),
                     blurRadius: 15.0,
-                    color: Color.fromARGB(255, 84, 88, 85),
+                    color: Color.fromARGB(255, 161, 177, 166),
                   ),
                 ],
               ),

@@ -42,13 +42,13 @@ class _intropage4State extends State<intropage4> {
             onChanged: (value) {
               name = value;
             },
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
               fillColor: Colors.white,
               enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white)),
+                  borderSide: BorderSide(color: Colors.black)),
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white)),
+                  borderSide: BorderSide(color: Colors.green)),
             ),
           )
         ]),

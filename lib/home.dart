@@ -26,15 +26,15 @@ class _HomeState extends State<Home> {
 
   loadmodel() async {
     await Tflite.loadModel(
-      model: 'assets/images/model_unquant.tflite',
-      labels: 'assets/images/labels.txt',
+      model: 'assets/images/model_unquant1.tflite',
+      labels: 'assets/images/labels1.txt',
     );
   }
 
   detectimage() async {
     var prediction = await Tflite.runModelOnImage(
         path: imageFile!.path,
-        numResults: 36,
+        numResults: 2,
         threshold: 0.5,
         imageMean: 127.5,
         imageStd: 127.5);
@@ -84,25 +84,42 @@ class _HomeState extends State<Home> {
                   ),
                   if (loading == true)
                     Column(children: [
-                      Text(
-                        "Materail type:" +
-                            _prediction[0]['label'].toString().substring(2),
-                        style: GoogleFonts.notoSansMono(
-                            textStyle: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w800,
-                          color: Color.fromARGB(255, 80, 212, 148),
-                        )),
-                      ),
-                      Text(
-                        "Confidence:" + _prediction[0]['confidence'].toString(),
-                        style: GoogleFonts.notoSansMono(
-                            textStyle: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w800,
-                          color: Color.fromARGB(255, 80, 212, 148),
-                        )),
-                      ),
+                      _prediction.isNotEmpty && _prediction[0]['label'] != null
+                          ? Column(
+                              children: [
+                                Text(
+                                  "Materail type:" +
+                                      _prediction[0]['label']
+                                          .toString()
+                                          .substring(2),
+                                  style: GoogleFonts.notoSansMono(
+                                      textStyle: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w800,
+                                    color: Color.fromARGB(255, 80, 212, 148),
+                                  )),
+                                ),
+                                Text(
+                                  "Confidence:" +
+                                      _prediction[0]['confidence'].toString(),
+                                  style: GoogleFonts.notoSansMono(
+                                      textStyle: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w800,
+                                    color: Color.fromARGB(255, 80, 212, 148),
+                                  )),
+                                ),
+                              ],
+                            )
+                          :Text(
+                                  "re -s",
+                                  style: GoogleFonts.notoSansMono(
+                                      textStyle: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w800,
+                                    color: Color.fromARGB(255, 80, 212, 148),
+                                  )),
+                                ),
                     ])
                 ],
               )
@@ -139,35 +156,19 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 20,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      imageFile = null;
-                    });
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green[50],
-                      padding: EdgeInsets.only(left: 50, right: 50)),
-                  child: Text(
-                    "reset",
-                    style: TextStyle(color: Colors.green, fontSize: 20),
-                  )),
-              ElevatedButton(
-                  onPressed: () async {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return LiveObjectDetection();
-                    }));
-                  },
-                  style: ElevatedButton.styleFrom(
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    imageFile = null;
+                  });
+                },
+                style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green[50],
-                  ),
-                  child: Text(
-                    "live detection",
-                    style: TextStyle(color: Colors.green, fontSize: 20),
-                  ))
-            ])
+                    padding: EdgeInsets.only(left: 50, right: 50)),
+                child: Text(
+                  "reset",
+                  style: TextStyle(color: Colors.green, fontSize: 20),
+                )),
           ],
         ),
       ),

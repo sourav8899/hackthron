@@ -73,7 +73,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                               final pref =
                                   await SharedPreferences.getInstance();
                               pref.setBool('showHome', true);
-                              Navigator.push(context,
+                              Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (context) {
                                 return Bottom();
                               }));

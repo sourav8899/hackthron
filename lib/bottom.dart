@@ -18,10 +18,11 @@ class Bottom extends StatefulWidget {
 
 class BottomState extends State<Bottom> {
   int _index = 0;
-  final screens = [homepage(), Home(), Aboutus()];
+  final screens = [homepage(), Home()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: screens[_index],
       bottomNavigationBar: GNav(
           // rippleColor: Color.fromARGB(255, 174, 238, 176),
@@ -37,16 +38,12 @@ class BottomState extends State<Bottom> {
           },
           curve: Curves.easeInOut,
           color: Colors.green,
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+          padding: EdgeInsets.symmetric(horizontal: 70, vertical: 25),
           duration: Duration(milliseconds: 900),
           activeColor: Color.fromARGB(255, 82, 167, 86),
           tabs: [
             GButton(icon: Icons.home, text: "Home"),
             GButton(icon: Icons.upload_file, text: "Upload"),
-            GButton(
-              icon: Icons.supervised_user_circle,
-              text: "About",
-            )
           ]),
     );
   }
