@@ -16,6 +16,7 @@ class _intropage4State extends State<intropage4> {
   Widget build(BuildContext context) {
     final _textcontroller = TextEditingController();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: background,
       body: Padding(
         padding: const EdgeInsets.all(16),

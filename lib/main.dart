@@ -7,7 +7,7 @@ import 'onboarding_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final pref = await SharedPreferences.getInstance();
-  final showhome = pref.getBool('showHome') ?? false;
+  final showhome =  false;
   runApp(MyApp(showhome: showhome));
 }
 
