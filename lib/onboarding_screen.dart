@@ -25,6 +25,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           PageView(
