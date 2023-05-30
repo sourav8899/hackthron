@@ -22,6 +22,7 @@ class BottomState extends State<Bottom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       resizeToAvoidBottomInset: false,
       body: screens[_index],
       bottomNavigationBar: GNav(

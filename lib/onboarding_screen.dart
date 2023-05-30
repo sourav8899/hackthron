@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hack/bottom.dart';
 import 'package:hack/intropage4.dart';
@@ -70,9 +71,14 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                       ? GestureDetector(
                           onTap: () async {
                             if (name != "") {
+                              await SystemChannels.textInput
+                                  .invokeMethod('TextInput.hide');
+                              await Future.delayed(
+                                  const Duration(milliseconds: 100), () {});
                               final pref =
                                   await SharedPreferences.getInstance();
                               pref.setBool('showHome', true);
+
                               Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (context) {
                                 return Bottom();
